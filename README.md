@@ -16,4 +16,6 @@ The Pdf files would be created:
 
 ![Pdfs](Generated-Pdfs.png)
 
+Upon sucessful creation,the attachment will be mailed:
 
+![Mail](Sent-mail.png)
