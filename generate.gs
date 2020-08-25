@@ -22,7 +22,7 @@ function createBulkPdfs(){
 
 }
 
-function createPdf(name,email,phone,rollno,docFile,tempFolder,pdfFolder) {
+function createPdf(name,email,phone,pdfName,docFile,tempFolder,pdfFolder) {
   const tempFile = docFile.makeCopy(tempFolder); 
   const tempDocFile = DocumentApp.openById(tempFile.getId());
   const body = tempDocFile.getBody(); 
@@ -31,6 +31,6 @@ function createPdf(name,email,phone,rollno,docFile,tempFolder,pdfFolder) {
   body.replaceText("{Phone}", phone);
   tempDocFile.saveAndClose();
   const pdfBlob = tempFile.getAs(MimeType.PDF);
-  pdfFolder.createFile(pdfBlob).setName(rollno);
+  pdfFolder.createFile(pdfBlob).setName(pdfName);
   tempFolder.removeFile(tempFile)
 }
